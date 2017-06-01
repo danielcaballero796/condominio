@@ -22,3 +22,19 @@ $factory->define(Condominio\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+//creando viviendas
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Condominio\Vivienda::class, function (Faker\Generator $faker) {
+
+
+    return [
+        'name' => $faker->unique()->randomDigit,
+        'habitada' => $faker->boolean,
+        'numero' => $faker->numberBetween($min = 100, $max = 310),
+        'bloque' => str_random(1),
+    ];
+});
+
+//'name', '', '',''
