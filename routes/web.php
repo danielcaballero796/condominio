@@ -11,4 +11,13 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', [
+    'uses' => 'HomeController@index',
+    'as'   => '/'
+]);
+
+//se crea la ruta de esta manera ya que si queremos luego cambiar el URL seria mas sencillo
+Route::get('registro', [
+    'uses' => 'HomeController@registro',
+    'as'   => 'registro'
+]);
