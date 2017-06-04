@@ -8,6 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Condominio</title>
 
 
@@ -32,13 +35,12 @@
     @yield('nav')
 
     <header>
+
         <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
-                <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-            </div>
+            <br><br><br><br><br>
+
+                <a href="{{ route ('inicio') }}" class="btn btn-primary btn-xl">Inicia Sesion</a>
+            <hr>
         </div>
     </header>
 
