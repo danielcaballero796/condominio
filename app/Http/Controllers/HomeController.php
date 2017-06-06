@@ -3,6 +3,8 @@
 namespace Condominio\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Condominio\User;
+use Condominio\vivienda;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,7 @@ class HomeController extends Controller
     {
         return view('portada');
     }
+    
 
     public function iniciado()
     {
@@ -35,7 +38,12 @@ class HomeController extends Controller
     {
         return view('auth.register');
     }
-
+    public function saludo()
+    {
+        $name = 'franklin';
+        $vivi = User::all();
+        return view('auth.saludo', compact ('vivi'));
+    }
     public function login()
     {
         return view('auth.login');
