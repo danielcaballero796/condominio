@@ -31,6 +31,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@iniciado')->name('home');
 
+//para el registro de personas
+Route::group(['prefix' => 'admin'], function (){
+
+    Route::resource('personas','PersonaController');
+
+});
 
 
 //envio de mails

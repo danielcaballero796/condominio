@@ -39,7 +39,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Al alcance de un click!</h2>
+                    <br><br><h2 class="section-heading">Al alcance de un click!</h2>
                     <hr class="primary">
                     <p>Visitanos, escribenos o llamanos nosotros te lo hacemos posible, las mejores maravillas aqui en South Gardens!</p>
                 </div>

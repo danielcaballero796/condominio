@@ -72,11 +72,11 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Dashboard</div>
+                        <div class="panel-heading">Registro de personas en Vivienda</div>
 
-                        <div class="panel-body">
-                            You are logged in!
-                        </div>
+                        {!! Form::open(['route' => 'personas.store', 'method' => 'POST']) !!}
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
