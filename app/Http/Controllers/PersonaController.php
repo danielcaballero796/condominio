@@ -33,6 +33,7 @@ class PersonaController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
         $persona = new Persona($request->all());
         $persona->save();
         dd('exito');
