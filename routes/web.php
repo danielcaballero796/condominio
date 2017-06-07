@@ -32,7 +32,10 @@ Route::get('saludo',[
     'as'   => 'saludo'
 
 ]);
+
+
 Auth::routes();
+//Route::resource('register','Auth.registerController');
 
 Route::get('/home', 'HomeController@iniciado')->name('home');
 
@@ -43,7 +46,7 @@ Route::group(['prefix' => 'admin'], function (){
 
 });
 
-Route::resource('register','Auth.registerController');
+
 //envio de mails
 Route::get('enviar', ['as' => 'enviar', function () {
 

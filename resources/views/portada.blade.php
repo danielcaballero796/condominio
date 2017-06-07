@@ -55,36 +55,6 @@
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
                     <p><a href="mailto:your-email@your-domain.com">southgardens@ejemplo.com</a></p>
                 </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <br><br><h2 class="section-heading">Al alcance de un click!</h2>
-                    <hr class="primary">
-                    <p>
-                <div class="table-responsive">          
-  <table class="table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Age</th>
-        <th>City</th>
-        <th>Country</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Anna</td>
-        <td>Pitt</td>
-        <td>35</td>
-        <td>New York</td>
-        <td>USA</td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-  </p>
-                </div>
             </div>
         </div>
     </aside>

@@ -38,14 +38,16 @@ class HomeController extends Controller
     {
         return view('auth.register');
     }
+
+    public function login()
+    {
+        return view('auth.login');
+    }
+
     public function saludo()
     {
         $name = 'franklin';
         $vivi = User::all();
         return view('auth.saludo', compact ('vivi'));
-    }
-    public function login()
-    {
-        return view('auth.login');
     }
 }
