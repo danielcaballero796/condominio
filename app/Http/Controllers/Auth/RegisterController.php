@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/personas/create';
 
     /**
      * Create a new controller instance.
@@ -69,8 +69,5 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function mostrar(array $data)
-    {
-        return 
-    }
+
 }

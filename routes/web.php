@@ -30,7 +30,6 @@ Route::get('iniciodesesion', [
 Route::get('saludo',[
     'uses' => 'HomeController@saludo',
     'as'   => 'saludo'
-
 ]);
 
 

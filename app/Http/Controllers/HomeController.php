@@ -5,6 +5,7 @@ namespace Condominio\Http\Controllers;
 use Illuminate\Http\Request;
 use Condominio\User;
 use Condominio\vivienda;
+use Yajra\Datatables\Datatables;
 
 class HomeController extends Controller
 {
@@ -46,8 +47,8 @@ class HomeController extends Controller
 
     public function saludo()
     {
-        $name = 'franklin';
-        $vivi = User::all();
-        return view('auth.saludo', compact ('vivi'));
+        $lista = User::all();
+        return view('auth.saludo', compact ('lista'));
     }
+
 }

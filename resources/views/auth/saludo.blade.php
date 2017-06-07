@@ -1,29 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-xs-5 selectContainer">
 
-
-<table class="table">
-<thead>
-      <tr>
-        <th class="active">nombre</th>
-        <th class="active">correo</th>
-        <th class="active">modificar</th> 
-      </tr>
-        @<?php foreach ($vivi as $vivi): ?>
-       <tbody>
-        <tr>
-        <td class="active">{{$vivi['name']}}</td>
-        <td class="active">{{$vivi['email']}}</td>
-        <td class="active"><button type="submit" class="btn btn-primary">modificar</button></td>
-        </tr>
-        </tbody>
-
-        <?php endforeach ?>
-                
-    </thead>
-</table>
-
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Registro</div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                    @foreach($users as $user)
+                                        <tr>
+                                            <td>{{$user->id}}</td>
+                                            <td>{{$user->name}}</td>
+                                            <td>{{$user->email}}</td>
+                                            <td><a href="" class="btn btn-warning">modificar</a> <a href="" class="btn btn-danger">eliminar</a></td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

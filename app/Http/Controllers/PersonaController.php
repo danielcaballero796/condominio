@@ -3,6 +3,7 @@
 namespace Condominio\Http\Controllers;
 
 use Condominio\Persona;
+use Condominio\User;
 use Illuminate\Http\Request;
 
 
@@ -13,7 +14,8 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::orderBy('id','ASC')->paginate(10);
+        return view('auth.saludo')->with('users',$users);
     }
 
     /**
@@ -31,7 +33,6 @@ class PersonaController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
         $persona = new Persona($request->all());
         $persona->save();
         dd('exito');
