@@ -69,19 +69,54 @@
 
     <section>
         <div class="container">
-            <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <div class="panel panel-default">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">Registro de personas en Vivienda</div>
+                        <br>
+                            <div class="correr">
+                                 {!! Form::open(['route' => 'personas.store', 'method' => 'POST']) !!}
 
-                        {!! Form::open(['route' => 'personas.store', 'method' => 'POST']) !!}
+                                <div class="form-group">
+                                    {!! Form::label('cedula','Cedula') !!}
+                                    {!! Form::text('cedula',null,['class' => 'corredero','placeholder'=>'Cedula', 'required']) !!}
+                                </div>
 
-                        {!! Form::close() !!}
+                                <div class="form-group">
+                                    {!! Form::label('alquilado','Alquilado') !!}
+                                    {!! Form::select('alquilado',['1'=>'Si','0'=>'No'],null,['class'=>'corredero']) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    {!! Form::label('nombre','Nombres') !!}
+                                    {!! Form::text('nombre',null,['class' => 'corredero','placeholder'=>'Nombres', 'required']) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    {!! Form::label('apellido','Apellidos') !!}
+                                    {!! Form::text('apellido',null,['class' => 'corredero','placeholder'=>'Apellidos', 'required']) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    {!! Form::label('correo','Correo') !!}
+                                    {!! Form::email('correo',null,['class' => 'corredero','placeholder'=>'ejemplo@ejemplo.com', 'required']) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    {!! Form::label('sexo','Sexo') !!}
+                                    {!! Form::select('sexo',['m'=>'H','f'=>'M'],null,['class'=>'corredero']) !!}
+                                </div>
+
+                                <div class="corredero2"><div class="form-group">
+                                    {!! Form::submit('Registrar',['class'=>'btn btn-primary']) !!}
+                                </div></div>
+                                {!! Form::close() !!}
+                            </div>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
+
+
 
 </div>
 
