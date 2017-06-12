@@ -21,7 +21,12 @@
                                             <td>{{$user->id}}</td>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
-                                            <td><a href="" class="btn btn-warning">modificar</a> <a href="" class="btn btn-danger">eliminar</a></td>
+                                            <td><a href="{{ route('users.edit',$user->id)}}" class="btn btn-warning">modificar</a>
+
+
+                                                <a href="{{route('users.destroy',$user->id)}}"
+                                                   onclick="return confirm('¿Seguro que deseas eliminarlo?')"
+                                                   class="btn btn-danger">eliminar</a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>

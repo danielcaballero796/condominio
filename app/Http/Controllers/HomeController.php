@@ -5,6 +5,8 @@ namespace Condominio\Http\Controllers;
 use Illuminate\Http\Request;
 use Condominio\User;
 use Condominio\vivienda;
+use Illuminate\Support\Facades\DB;
+use Laracasts\Flash\Flash;
 
 
 class HomeController extends Controller
@@ -50,5 +52,43 @@ class HomeController extends Controller
         $users = User::all();
         return view('auth.saludo', compact ('users'));
     }
+
+    /**
+     * Elimina a una Persona
+     * @param $id
+     */
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        DB::statement('ALTER TABLE `users` MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT='.$id);
+
+        flash('Se ha eliminado el usuario ' .$user->name. ' exitosamente')->error()->important();
+        return redirect()->route('saludo');
+    }
+
+    /**
+     * para editar a un usuario
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('modificarusers')->with('user',$user);
+    }
+
+    /**
+     * modifica a un usuario
+     * @param $id
+     * @return $this
+     */
+    public function update($id)
+    {
+        $user = User::find($id);
+        return view('modificarusers')->with('user',$user);
+    }
+
+
 
 }

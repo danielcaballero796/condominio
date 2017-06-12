@@ -16,6 +16,7 @@
 
     <!-- Incluyendo de Bootstrap-->
     <link href="{{ asset('plugins/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- Custom Fonts -->
     <link href="{{ asset('plugins/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
@@ -43,7 +44,7 @@
             <hr>
         </div>
     </header>
-
+    @include('flash::message')
     @yield('content')
 
     <!-- jQuery -->

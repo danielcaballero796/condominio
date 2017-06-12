@@ -5,6 +5,8 @@ namespace Condominio\Http\Controllers;
 use Condominio\Persona;
 use Condominio\User;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+use Laracasts\Flash\Flash;
 
 
 class PersonaController extends Controller
@@ -14,8 +16,10 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('id','ASC')->paginate(10);
-        return view('auth.saludo')->with('users',$users);
+        $users = User::orderBy('id','ASC')->paginate(5);
+
+        return view('auth.saludo')->with('users', $users);
+
     }
 
     /**
@@ -36,7 +40,8 @@ class PersonaController extends Controller
         //dd($request->all());
         $persona = new Persona($request->all());
         $persona->save();
-        dd('exito');
+        flash('Se guardo correctamente')->success();
+        return redirect('saludo');
     }
 
     /**
@@ -54,7 +59,7 @@ class PersonaController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**

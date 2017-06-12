@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('links')
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body id="appi">
     <div id="app">
@@ -71,7 +72,7 @@
                 </div>
             </div>
         </nav>
-
+        @include('flash::message')
         @yield('content')
     </div>
 

@@ -40,11 +40,26 @@ Route::get('/home', 'HomeController@iniciado')->name('home');
 
 //para el registro de personas
 Route::group(['prefix' => 'admin'], function (){
-
     Route::resource('personas','PersonaController');
-
 });
 
+//para destruir usuarios registrados
+Route::get('users/{id}/destroy',[
+    'uses' => 'HomeController@destroy',
+    'as' => 'users.destroy'
+]);
+
+//para destruir usuarios registrados
+Route::get('users/{id}/edit',[
+    'uses' => 'HomeController@edit',
+    'as' => 'users.edit'
+]);
+
+//para actualizar usuarios registrados
+Route::put('users/{id}',[
+    'uses' => 'HomeController@update',
+    'as' => 'users.update'
+]);
 
 //envio de mails
 Route::get('enviar', ['as' => 'enviar', function () {
