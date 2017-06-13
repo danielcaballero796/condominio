@@ -83,10 +83,16 @@ class HomeController extends Controller
      * @param $id
      * @return $this
      */
-    public function update($id)
+    public function update(Request $request,$id)
     {
         $user = User::find($id);
-        return view('modificarusers')->with('user',$user);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        flash('El usuario '. $request->name .' se actualizo correctamente')->success();
+        return redirect()->route('saludo');
     }
 
 
