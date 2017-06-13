@@ -81,4 +81,10 @@ class PersonaController extends Controller
         //
     }
 
+    public function mensaje($id)
+    {
+        $user = User::find($id);
+        return view('mensajenot', compact('user'));
+    }
+
 }

@@ -48,6 +48,20 @@
                             <li><a href="{{ route('inicio') }}">Inicio de Sesion</a></li>
                             <li><a href="{{ route('registro') }}">Registro</a></li>
                         @else
+                            <!--inicia notificaciones-->
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="glyphicon glyphicon-bell"></i>
+                                    <span class="label label-warning">!</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 10 notifications</li>
+                                    <li class="menu">
+                                        <i class="glyphicon glyphicon-envelope"><a href="{{ route('mensaje.index') }}">Todas las notificaciones</a></i>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--termina notificaciones-->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -55,10 +69,14 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="{{ route('notificaciones') }}"> Notificaciones </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Cerrar Session
+
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

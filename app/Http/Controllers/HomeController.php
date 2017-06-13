@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
         return view('portada');
     }
-    
+
 
     public function iniciado()
     {
@@ -50,20 +50,20 @@ class HomeController extends Controller
     public function saludo()
     {
         $users = User::all();
-        return view('auth.saludo', compact ('users'));
+        return view('auth.saludo', compact('users'));
     }
 
     /**
-     * Elimina a una Persona
+     * Elimina a un Usuario
      * @param $id
      */
     public function destroy($id)
     {
         $user = User::find($id);
         $user->delete();
-        DB::statement('ALTER TABLE `users` MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT='.$id);
+        DB::statement('ALTER TABLE `users` MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=' . $id);
 
-        flash('Se ha eliminado el usuario ' .$user->name. ' exitosamente')->error()->important();
+        flash('Se ha eliminado el usuario ' . $user->name . ' exitosamente')->error()->important();
         return redirect()->route('saludo');
     }
 
@@ -75,7 +75,7 @@ class HomeController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('modificarusers')->with('user',$user);
+        return view('modificarusers')->with('user', $user);
     }
 
     /**
@@ -83,7 +83,7 @@ class HomeController extends Controller
      * @param $id
      * @return $this
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $user = User::find($id);
         $user->name = $request->name;
@@ -91,10 +91,8 @@ class HomeController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
-        flash('El usuario '. $request->name .' se actualizo correctamente')->success();
+        flash('El usuario ' . $request->name . ' se actualizo correctamente')->success();
         return redirect()->route('saludo');
     }
-
-
 
 }

@@ -49,7 +49,7 @@ Route::get('users/{id}/destroy',[
     'as' => 'users.destroy'
 ]);
 
-//para destruir usuarios registrados
+//para modificar usuarios registrados
 Route::get('users/{id}/edit',[
     'uses' => 'HomeController@edit',
     'as' => 'users.edit'
@@ -60,6 +60,29 @@ Route::put('users/{id}',[
     'uses' => 'HomeController@update',
     'as' => 'users.update'
 ]);
+
+//para mandar a los usuarios para seleccionar y enviar las notificaciones
+Route::get('notificaciones',[
+    'uses' => 'NotificationController@show',
+    'as' => 'notificaciones'
+]);
+
+//para mandar a las notificaciones usuarios registrados
+Route::get('notificaciones/{id}',[
+    'uses' => 'NotificationController@mensaje',
+    'as' => 'notificaciones.mjs'
+]);
+
+Route::group(['prefix' => 'crear'], function (){
+    Route::resource('mensaje','NotificationController');
+});
+
+Route::get('mensaje', [
+    'uses' => 'NotificationController@index',
+    'as'   => 'mensaje.index'
+]);
+
+
 
 //envio de mails
 Route::get('enviar', ['as' => 'enviar', function () {
