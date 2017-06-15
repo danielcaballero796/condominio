@@ -72,6 +72,9 @@
                                         <a href="{{ route('notificaciones') }}"> Notificaciones </a>
                                     </li>
                                     <li>
+                                        <a href="{{ route('reserva.index') }}"> Reservas de Instalaciones </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
