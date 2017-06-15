@@ -27,6 +27,7 @@ Route::get('iniciodesesion', [
     'as'   => 'inicio'
 ]);
 
+//ruta de consulta de todos los usuarios registrados
 Route::get('saludo',[
     'uses' => 'HomeController@saludo',
     'as'   => 'saludo'
@@ -73,18 +74,31 @@ Route::get('notificaciones/{id}',[
     'as' => 'notificaciones.mjs'
 ]);
 
+//grupo de rutas de notificacion
 Route::group(['prefix' => 'crear'], function (){
     Route::resource('mensaje','NotificationController');
 });
 
+//para enviar a las notificaciones a la vista principal
 Route::get('mensaje', [
     'uses' => 'NotificationController@index',
     'as'   => 'mensaje.index'
 ]);
 
+//grupo de rutas de Reserva de instalacion
+Route::group(['prefix' => 'registrar'], function (){
+    Route::resource('reserva','ReservaController');
+});
+
+//para enviar a la pagina de reseva
+Route::get('reserva', [
+    'uses' => 'ReservaController@index',
+    'as'   => 'reserva.index'
+]);
 
 
-//envio de mails
+
+//envio de emails
 Route::get('enviar', ['as' => 'enviar', function () {
 
     $data = ['link' => 'http://styde.net'];
