@@ -99,7 +99,8 @@
 
                                 <div class="form-group">
                                     {!! Form::label('cedula','Cedula') !!}
-                                    {!! Form::text('cedula',null,['class' => 'corredero','placeholder'=>'Cedula', 'required']) !!}
+                                    {!! Form::text('cedula',null,['class' => 'corredero','placeholder'=>'Cedula', 'required','maxlength' => '10']) !!}
+
                                 </div>
 
                                 <div class="form-group">
