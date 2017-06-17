@@ -64,6 +64,9 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
+                                    <a href="{{ route ('saludo') }}">Representantes de las viviendas</a>
+                                </li>
+                                <li>
                                     <a href="{{ route('notificaciones') }}"> Notificaciones </a>
                                 </li>
                                 <li>

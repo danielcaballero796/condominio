@@ -21,9 +21,6 @@
                         <a class="btn btn-primary" href="{{ route ('registro') }}">Registro</a>
                     </li>
                     <li>
-                        <a class="btn btn-primary" href="{{ route ('saludo') }}">Consulta</a>
-                    </li>
-                    <li>
                         <a class="btn btn-primary" href="#contact">Contactenos</a>
                     </li>
 

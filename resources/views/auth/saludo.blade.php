@@ -13,6 +13,8 @@
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Email</th>
+                                    <th>Número</th>
+                                    <th>Bloque</th>
                                     <th></th>
                                 </thead>
                                 <tbody>

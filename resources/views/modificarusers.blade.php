@@ -37,6 +37,25 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('numero') ? ' has-error' : '' }}">
+                                <label for="numero" class="col-md-4 control-label">Número y bloque de la casa</label>
+
+                                <div class="col-md-6">
+                                    {!! Form::select('numero',[
+                                   '101' => '101','102' => '102','103' => '103',
+                                   '201' => '201','202' => '202','203' => '203',
+                                   '301' => '301','302' => '302','303' => '303',],$user->numero,['class' => 'form-control', 'placeholder'=>'número de la casa', 'required']) !!}
+
+                                    {!! Form::select('bloque',['a' => 'a','b' => 'b'],$user->bloque,['class' => 'form-control','placeholder'=>'bloque de la casa', 'required']) !!}
+
+                                    @if ($errors->has('numero'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('numero') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label for="password" class="col-md-4 control-label">Contraseña</label>
 

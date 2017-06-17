@@ -89,6 +89,8 @@ class HomeController extends Controller
         $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->numero = $request->numero;
+        $user->bloque = $request->bloque;
         $user->password = bcrypt($request->password);
         $user->save();
 
