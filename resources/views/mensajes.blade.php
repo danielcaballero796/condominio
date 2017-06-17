@@ -11,6 +11,7 @@
                             <thead>
                             <th>ID Usuario</th>
                             <th>ID Notificacion</th>
+                            <th>Asunto</th>
                             <th>Mensaje</th>
                             <th>Tipo</th>
                             <th>Fecha</th>
@@ -21,6 +22,7 @@
                                 <tr>
                                     <td>{{$noti->iduser}}</td>
                                     <td>{{$noti->idnotificacion}}</td>
+                                    <td>{{$noti->asunto}}</td>
                                     <td>{{$noti->info}}</td>
                                     <td>
                                         @if($noti->tipo == "normal")

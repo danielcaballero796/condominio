@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Daniel
  * Date: 06-06-2017
- * Time: 12:59 PM
+ * Time: 06:44 PM
  */
 
 namespace Condominio;
@@ -13,19 +13,19 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Persona extends model
+class Pariente extends model
 {
 
     use Notifiable;
 
-    protected $table = 'persona';
+    protected $table = 'pariente';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'cedula', 'alquilado', 'nombre','apellido', 'numero', 'bloque', 'correo', 'sexo'
+        'cedula', 'cedularepresentante', 'parentesco',
     ];
 
 

@@ -13,7 +13,7 @@
                             <label for="id" class="col-md-4 control-label">ID del Usuario</label>
 
                             <div class="col-md-6">
-                                {!! Form::text('iduser',$user->id,['class' => 'form-control','placeholder'=>'ID', 'required']) !!}
+                                {!! Form::text('iduser',$user->id,['class' => 'form-control','placeholder'=>'ID','readonly' => 'readonly', 'required']) !!}
 
                                 @if ($errors->has('id'))
                                     <span class="help-block">
@@ -23,7 +23,21 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('asunto') ? ' has-error' : '' }}">
+                            <label for="asunto" class="col-md-4 control-label">Asunto</label>
+
+                            <div class="col-md-6">
+                                {!! Form::text('asunto',null,['class' => 'form-control','placeholder'=>'Asunto', 'required']) !!}
+
+                                @if ($errors->has('asunto'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('asunto') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('mensaje') ? ' has-error' : '' }}">
                             <label for="mensaje" class="col-md-4 control-label">Mensaje</label>
 
                             <div class="col-md-6">
@@ -37,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('tipo') ? ' has-error' : '' }}">
                             <label for="tipo" class="col-md-4 control-label">Tipo</label>
 
                             <div class="col-md-6">
@@ -51,7 +65,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('fecha') ? ' has-error' : '' }}">
                             <label for="fecha" class="col-md-4 control-label">Fecha</label>
 
                             <div class="col-md-6">

@@ -65,8 +65,10 @@ class RegisterController extends Controller
         flash('Se registro el usuario exitosamente')->success();
         return User::create([
             'name' => $data['name'],
+            'cedula' => $data['cedula'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'tipo' => $data['tipo'],
         ]);
     }
 

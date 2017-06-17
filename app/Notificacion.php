@@ -22,7 +22,7 @@ class Notificacion extends model
      * @var array
      */
     protected $fillable = [
-        'iduser', 'info', 'tipo', 'fecha'
+        'iduser', 'asunto', 'info', 'tipo', 'fecha'
     ];
 }
 

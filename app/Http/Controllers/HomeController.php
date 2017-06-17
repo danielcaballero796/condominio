@@ -35,6 +35,7 @@ class HomeController extends Controller
     public function iniciado()
     {
         return view('inicio');
+
     }
 
     public function registro()

@@ -2,10 +2,12 @@
 
 namespace Condominio\Http\Controllers;
 
+use Condominio\Pariente;
 use Condominio\Persona;
 use Condominio\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\DB;
 use Laracasts\Flash\Flash;
 
 
@@ -37,11 +39,42 @@ class PersonaController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        $persona = new Persona($request->all());
-        $persona->save();
-        flash('Se guardo correctamente')->success();
-        return redirect('saludo');
+        $sql = "Select cedula from users where cedula = ". "'".$request->cedulap. "'";
+        $cero= count(DB::select($sql));
+
+        if ($cero==0){
+            flash('La cedula del propietario es erronea, no se guardaron los datos')->error();
+            return redirect('home');
+        }else{
+            //se crea la persona
+            $persona = new Persona();
+            $persona->cedula = $request->cedula;
+            $persona->alquilado = $request->alquilado;
+            $persona->nombre = $request->nombre;
+            $persona->apellido = $request->apellido;
+            $persona->numero = $request->numero;
+            $persona->bloque = $request->bloque;
+            $persona->correo = $request->correo;
+            $persona->sexo = $request->sexo;
+            $persona->save();
+        }
+        if ($cero==0){
+            //
+        }else{
+            $cedularepresentante= DB::select($sql)[0]->cedula;
+            //se crea el pariente para guardarlo en su respectiva tabla
+            $pariente = new Pariente();
+            $pariente->cedula = $request->cedula;
+            $pariente->cedularepresentante = $cedularepresentante;
+            $pariente->parentesco = $request->parentesco;
+            $pariente->save();
+
+
+            flash('Se guardo correctamente')->success();
+            return redirect('saludo');
+        }
+
+
     }
 
     /**

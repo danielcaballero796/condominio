@@ -15,10 +15,10 @@ class CreateNotificacionTable extends Migration
     {
         Schema::create('notificacion', function (Blueprint $table) {
             $table->integer('idnotificacion');
+            $table->string('asunto');
             $table->string('info');
             $table->char('tipo');
             $table->date('fecha');
-            $table->integer('idvivienda');
             $table->timestamps();
         });
     }

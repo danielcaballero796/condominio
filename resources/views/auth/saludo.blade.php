@@ -21,6 +21,8 @@
                                             <td>{{$user->id}}</td>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
+                                            <td>{{$user->numero}}</td>
+                                            <td>{{$user->bloque}}</td>
                                             <td><a href="{{ route('users.edit',$user->id)}}" class="btn btn-warning">modificar</a>
 
 

@@ -98,6 +98,16 @@
                                  {!! Form::open(['route' => 'personas.store', 'method' => 'POST']) !!}
 
                                 <div class="form-group">
+                                    {!! Form::label('correo','Cedula del Propietario') !!}
+                                    {!! Form::text('cedulap',null,['class' => 'corredero','placeholder'=>'Cedula del Propietario', 'required']) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    {!! Form::label('parentesco','Parentesco con el Propietario') !!}
+                                    {!! Form::text('parentesco',null,['class' => 'corredero','placeholder'=>'Parentesco con el Propietario', 'required']) !!}
+                                </div>
+
+                                <div class="form-group">
                                     {!! Form::label('cedula','Cedula') !!}
                                     {!! Form::text('cedula',null,['class' => 'corredero','placeholder'=>'Cedula', 'required','maxlength' => '10']) !!}
 
@@ -116,6 +126,17 @@
                                 <div class="form-group">
                                     {!! Form::label('apellido','Apellidos') !!}
                                     {!! Form::text('apellido',null,['class' => 'corredero','placeholder'=>'Apellidos', 'required']) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    {!! Form::label('numero','Numero de la casa y bloque') !!}
+                                    {!! Form::select('numero',[
+                                    '101' => '101','102' => '102','103' => '103',
+                                    '201' => '201','202' => '202','203' => '203',
+                                    '301' => '301','302' => '302','303' => '303',],null,['class' => 'corredero']) !!}
+
+                                    {!! Form::select('bloque',['a' => 'a','b' => 'b'],null,['class' => 'corredero','placeholder'=>'bloque de la casa', 'required']) !!}
+
                                 </div>
 
                                 <div class="form-group">
